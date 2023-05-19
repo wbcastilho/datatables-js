@@ -120,6 +120,15 @@
             table = $('#myTable').DataTable({
                 order: [[0, 'asc']],
             });
+
+            // table = $('#myTable').DataTable({
+            //     serverSide: true,
+            //     processing: true,
+            //     ajax: {
+            //         url: 'server.php',
+            //         type: 'POST'
+            //     }
+            // });
         });
 
         $('#addRow').on('click', function () {
