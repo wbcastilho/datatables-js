@@ -141,7 +141,8 @@
 
         $(document).ready(function() {
             table = $('#myTable').DataTable({
-                order: [[0, 'desc']],
+                ordering: false
+                // order: [[1, 'asc']],
                 // columnDefs: [
                 //     { type: 'datetime', targets: 1 } // 0 é o índice da coluna que contém a data e hora
                 // ],
@@ -158,7 +159,24 @@
         });
 
         $('#addRow').on('click', function () {
-            table.row.add(['Teste' + value, '22/05/2023 21:17:00', 'teste@example.com', '10']).draw(false);
+            let novaLinha = ['Teste' + value, '22/05/2023 21:17:00', 'teste@example.com', '10'];
+
+            table.row.add(novaLinha).draw(false);
+            
+            // Obter o índice da primeira linha
+            // var firstRowIndex = table.row(0).index();
+
+            // // Obter os dados da primeira linha
+            // var rowData = table.row(0).data();
+
+            // // Inserir a nova linha na primeira posição
+            // table.row.add(novaLinha).draw(false);
+
+            // // Atualizar os dados da primeira linha
+            // table.row(0).data(novaLinha).draw(false); 
+            
+            // table.row(1).data(novaLinha);
+
             value++;               
         }); 
     </script>
